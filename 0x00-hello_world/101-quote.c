@@ -1,17 +1,19 @@
-#include <unistd.h>
+
+
+#include<unistd.h>
 
 /**
  * main - Entry point
  *
- * Return: error 1
+ * Description: print stuff into the standard error;
  *
- * Description: This program prints stuff to the standard error
+ * Return: error 1.
 */
 
 int main(void)
 {
-    char s[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char s[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
-    write(1, s, 59);
-    return (1);
+	write(1, s, 59);
+	return (1);
 }
