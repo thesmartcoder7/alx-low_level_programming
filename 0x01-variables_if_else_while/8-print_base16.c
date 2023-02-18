@@ -11,17 +11,22 @@
 
 int main(void)
 {
-	int number = 48;
+	char c;
 
-	while (number <= 102)
-	{
-		putchar(number);
+	int d;
 
-		if (number == 57)
-			number += 39;
-		++number;
-	}
+	c = 'a';
+	d = 0;
+	while
+		(d < 10) {
+			putchar(d + '0');
+			d++;
+		}
+	while
+		(c <= 'f') {
+			putchar(c);
+			c++;
+		}
 	putchar('\n');
-
 	return (0);
 }
