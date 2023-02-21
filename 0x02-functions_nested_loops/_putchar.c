@@ -13,3 +13,4 @@ int _putchar(char ch)
 	putchar(ch);
 	return (1);
 }
+
