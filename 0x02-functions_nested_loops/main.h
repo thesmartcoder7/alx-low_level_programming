@@ -1,12 +1,17 @@
-/*
-define macro main, this will reduce multiple calling
-of the header file
+#include <stdio.h>
+
+/**
+ * _putchar - writes the character c to stdout
+ * @ch: characters
+ * description: The character to print
+ *
+ * Return: On success 1.
+ *         On error, -1 is returned, and errno is set appropriately.
 */
 
-#ifndef _PUTCHAR
-#define _PUTCHAR
+int _putchar(char ch)
+{
+	putchar(ch);
+	return (1);
+}
 
-/*function declarations*/
-int _putchar(char c);
-
-#endif

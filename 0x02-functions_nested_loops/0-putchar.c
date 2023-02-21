@@ -11,17 +11,12 @@
 int main(void)
 {
 	char word[] = "_putchar";
-	int i = 0;
 
-	while (i < 8)
-	{
-		_putchar(word[i]);
-	}
+	int i;
 
-	_putchar('\n');
+	for (i = 0; i < 8; ++i)
+		_putchar (word[i]);
 
+	_putchar ('\n');
 	return (0);
-
 }
-
-
