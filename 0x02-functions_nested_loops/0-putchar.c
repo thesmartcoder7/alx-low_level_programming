@@ -11,7 +11,6 @@
 int main(void)
 {
 	char word[8] = "_putchar";
-	char newline[1] = " ";
 	int i = 0;
 
 	while (i < 8)
@@ -19,7 +18,7 @@ int main(void)
 		_putchar(word[i]);
 	}
 
-	_putchar(newline);
+	_putchar('\n');
 
 	return (0);
 
