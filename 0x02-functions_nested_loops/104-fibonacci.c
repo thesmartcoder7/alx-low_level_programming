@@ -11,28 +11,28 @@
 
 int main(void)
 {
-	int frst, scnd, i, terms, next_fib_term;
+	long frst, scnd, i;
 
-	frst = 1;
-	scnd = 2;
-	terms = 100;
-	next_fib_term = frst + scnd;
+	frst = 2;
+	scnd = 1;
 
 	i = 0;
 
-	printf("%d, %d, ", frst, scnd);
-
-	for (i = frst; i <= terms; ++i)
+	printf("%ld, %ld, ", scnd, frst);
+	while (i < 98)
 	{
-		if (next_fib_term > 0)
-		{
-			printf("%d, ", next_fib_term);
-			frst = scnd;
-			scnd = next_fib_term;
-			next_fib_term = frst + scnd;
-		}
-	}
+		long fibo = frst + scnd;
 
+		printf("%ld", fibo);
+
+
+		if (i < 97)
+			printf(", ");
+
+		scnd = frst;
+		frst = fibo;
+		++i;
+	}
 	printf("\n");
 
 	return (0);
