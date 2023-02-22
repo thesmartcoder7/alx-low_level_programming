@@ -13,20 +13,20 @@ int main(void)
 {
 	int frst, scnd, i;
 
-	frst = 2;
-	scnd = 1;
+	frst = 1;
+	scnd = 2;
 
 	i = 0;
 
-	printf("%ld, %ld, ", scnd, frst);
-	while (i < 100)
+	printf("%ld, %ld, ", frst, scnd);
+	while (i < 48)
 	{
-		long fibo = frst + scnd;
+		int fibo = frst + scnd;
 
 		printf("%ld", fibo);
 
 
-		if (i < 99)
+		if (i < 47)
 			printf(", ");
 
 		scnd = frst;
