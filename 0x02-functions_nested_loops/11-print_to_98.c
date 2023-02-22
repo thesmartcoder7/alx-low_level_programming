@@ -3,9 +3,9 @@
 /**
  * print_to_98 - Entry point
  *
- * @num: integer
+ * @num: integer inputs
  *
- * Description: check the code.
+ * Description:  prints all natural numbers from n to 98
  *
  * Return: Always 0 (Success)
 */
