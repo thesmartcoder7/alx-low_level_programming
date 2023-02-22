@@ -19,14 +19,14 @@ int main(void)
 	i = 0;
 
 	printf("%ld, %ld, ", scnd, frst);
-	while (i < 91)
+	while (i < 100)
 	{
 		long fibo = frst + scnd;
 
 		printf("%ld", fibo);
 
 
-		if (i < 87)
+		if (i < 99)
 			printf(", ");
 
 		scnd = frst;
