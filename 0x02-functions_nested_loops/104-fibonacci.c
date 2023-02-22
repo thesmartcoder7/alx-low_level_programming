@@ -18,12 +18,12 @@ int main(void)
 
 	i = 0;
 
-	printf("%ld, %ld, ", frst, scnd);
+	printf("%d, %d, ", frst, scnd);
 	while (i < 48)
 	{
 		int fibo = frst + scnd;
 
-		printf("%ld", fibo);
+		printf("%d", fibo);
 
 
 		if (i < 47)
