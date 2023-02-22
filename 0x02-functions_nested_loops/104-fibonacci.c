@@ -20,14 +20,17 @@ int main(void)
 
 	i = 0;
 
-	printf("%d, %d", frst, scnd);
+	printf("%d, %d, ", frst, scnd);
 
 	for (i = frst; i <= terms; ++i)
 	{
-		printf("%d, ", next_fib_term);
-		frst = scnd;
-		scnd = next_fib_term;
-		next_fib_term = frst + scnd;
+		if (next_fib_term > 0)
+		{
+			printf("%d, ", next_fib_term);
+			frst = scnd;
+			scnd = next_fib_term;
+			next_fib_term = frst + scnd;
+		}
 	}
 
 	printf("\n");
