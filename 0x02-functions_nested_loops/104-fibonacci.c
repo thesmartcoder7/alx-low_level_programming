@@ -11,7 +11,7 @@
 
 int main(void)
 {
-	long frst, scnd, i, terms, next_fib_term;
+	int frst, scnd, i, terms, next_fib_term;
 
 	frst = 1;
 	scnd = 2;
