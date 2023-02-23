@@ -1,7 +1,7 @@
 /**
-* _isupper - Check if uppercase
+* _isupper - function to check for uppercase
 *
-* @c: Integer
+* @c: Integer input parameter
 *
 * Description: This program checks if the parameter
 *		input is uppercase of lower
