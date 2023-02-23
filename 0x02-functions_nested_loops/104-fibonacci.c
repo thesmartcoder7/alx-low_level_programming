@@ -29,8 +29,8 @@ int main(void)
 		if (i < 99)
 			printf(", ");
 
-		scnd = frst;
-		frst = fibo;
+		frst = scnd;
+		scnd = fibo;
 		++i;
 	}
 	printf("\n");
