@@ -11,17 +11,17 @@
 
 int main(void)
 {
-	long x, maxf;
+	long x, maximum_factor;
 	long number = 612852475143;
 	double square = sqrt(number);
 
 	for (x = 1; x <= square; x++)
 	{
 		if (number % x == 0)
-			maxf = number / x;
+			maximum_factor = number / x;
 	}
 
-	printf("%ld\n", maxf);
+	printf("%ld\n", maximum_factor);
 
 	return (0);
 }
