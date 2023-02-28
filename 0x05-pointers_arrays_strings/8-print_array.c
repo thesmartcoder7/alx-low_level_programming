@@ -5,8 +5,8 @@
  *
  * Description: prints n elements of an array of integers.
  *
- * @n: elements parameter input
- * @a: string parameter input
+ * @n: elements input parameter
+ * @a: string input parameter
  *
  * Return: Nothing
 */
