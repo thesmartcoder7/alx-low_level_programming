@@ -11,11 +11,17 @@
 
 void reverse_array(int *a, int n)
 {
-		int tmp, index;
+	int temp, f, l;
 
-		for (index = n - 1; index >= n / 2; index--)
-		{
-				tmp = a[n - 1 - index];
-				a[n - 1 - index] = tmp;
-		}
+	f = 0;
+	l = n - 1;
+
+	while (f < l)
+	{
+		temp = a[f];
+		a[f] = a[l];
+		a[l] = temp;
+		f++;
+		l--;
+	}
 }
