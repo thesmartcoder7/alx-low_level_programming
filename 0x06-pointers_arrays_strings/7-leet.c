@@ -1,5 +1,6 @@
 /**
- * leet - a function that encodes a string into 1337
+ * leet - this function that encodes
+ *		a string into 1337
  *
  * @s: string input
  *
