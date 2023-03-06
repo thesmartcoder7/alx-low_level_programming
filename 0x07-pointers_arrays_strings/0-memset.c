@@ -2,9 +2,9 @@
 
 /**
  * *_memset - fills memory with a constant byte
- * @s: memory area to be filled
- * @b: char to copy
- * @n: number of times to copy b
+ * @s: string pointer input
+ * @b: char input variable
+ * @n: number of bytes to use . . .
  *
  * Return: pointer to the memory area s
  */
