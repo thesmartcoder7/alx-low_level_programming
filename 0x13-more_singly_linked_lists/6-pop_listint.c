@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * pop_listint: delete the head node of a listint_t list.
+ * pop_listint - delete the head node of a listint_t list.
  *
  * @head: pointer to the address of the
  *        head of the listint_t list.
@@ -9,6 +9,7 @@
  * Return: 0 if the list is empty . . .
  *         else . . . the head node's data (n).
  */
+
 int pop_listint(listint_t **head)
 {
 	listint_t *temp;
