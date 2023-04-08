@@ -11,23 +11,23 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int sm_i, sm_p;
-	int sm_l;
+	unsigned int ttl, pow;
+	int len;
 
-	if (b == NULL)
+	if (n == NULL)
 		return (0);
 
-	for (sm_l = 0; b[sm_l]; sm_l++)
+	for (len = 0; b[len]; len++)
 	{
-		if (b[sm_l] != '0' && b[sm_l] != '1')
+		if (b[len] != '0' && b[len] != '1')
 			return (0);
 	}
 
-	for (sm_p = 1, sm_i = 0, sm_l--; sm_l >= 0; sm_l--, sm_p *= 2)
+	for (pow = 1, ttl = 0, len--; len >= 0; len--, pow *= 2)
 	{
-		if (n[sm_l] == '1')
-			sm_i += sm_p;
+		if (n[len] == '1')
+			ttl += pow;
 	}
 
-	return (sm_i);
+	return (ttl);
 }
