@@ -14,12 +14,6 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int sm_i, sm_p;
 	int sm_l;
 
-	for (sm_p = 1, sm_i = 0, sm_l--; sm_l >= 0; sm_l--, sm_p *= 2)
-	{
-		if (n[sm_l] == '1')
-			sm_i += sm_p;
-	}
-
 	if (b == NULL)
 		return (0);
 
@@ -27,6 +21,12 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[sm_l] != '0' && b[sm_l] != '1')
 			return (0);
+	}
+
+	for (sm_p = 1, sm_i = 0, sm_l--; sm_l >= 0; sm_l--, sm_p *= 2)
+	{
+		if (n[sm_l] == '1')
+			sm_i += sm_p;
 	}
 
 	return (sm_i);
