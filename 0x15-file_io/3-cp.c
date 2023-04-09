@@ -15,7 +15,7 @@ int main(int ac, char **av)
 {
 	int file_from, file_to;
 	ssize_t  sm_read = 1024, sm_write, sm_close;
-	char content[1024];
+	char buffer[1024];
 
 	if (ac != 3)
 	{ dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
@@ -33,11 +33,11 @@ int main(int ac, char **av)
 
 	while (sm_read == 1024)
 	{
-		sm_read = read(file_from, content, 1024);
+		sm_read = read(file_from, buffer, 1024);
 		if (sm_read == -1)
 		{ dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 			exit(98); }
-		sm_write = write(file_to, content, sm_read);
+		sm_write = write(file_to, buffer, sm_read);
 		if (sm_write == -1)
 		{ dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 			exit(99); }
