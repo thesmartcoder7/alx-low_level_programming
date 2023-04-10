@@ -1,48 +1,44 @@
-#include "main.h"
 #include <stdlib.h>
+#include "main.h"
 
 /**
- * read_textfile - this function reads a text file and prints
- *				   it to POSIX stdout.
- *
- * @filename: the pointer input parameter to the name of the file.
- * @letters: the number of letters to be read and printed.
- *
- * Return: (0) if unsuccessful or gets a NULL filename . . . else . . .
- *			 actual number of letters it could read and print.
+ * read_textfile - read text file and print it to standard output
+ * @filename: variable pointer to be read
+ * @letters: letters to be read and printed
+ * Description: Write a function and prints it
+ * to the POSIX standard output.
+ * Return: the actual number of letters it could read and print,
+ *          or 0 if there was an error
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int file;
-	ssize_t sm_read_check, sm_count;
-	char *text;
 
-	if (filename == NULL)
-		return (0);
+ssize_t file, gk_read_check, gk_count;
+char *text;
 
-	file = open(filename, O_RDONLY);
+/*check file validity*/
+text = malloc(letters);
+if (text == NULL)
+return (0);
 
-	if (file == -1)
-		return (0);
+if (filename == NULL)
+return (0);
 
-	text = malloc(sizeof(char) * letters);
-	if (text == NULL)
-	{
-		free(text);
-		return (0);
-	}
+file = open(filename, O_RDONLY);
 
-	sm_read_check = read(file, text, letters);
-	if (sm_read_check == -1)
-		return (0);
+if (file == -1)
+{
+free(text);
+return (0);
+}
 
-	sm_count = write(STDOUT_FILENO, text, sm_read_check);
-	if (sm_count == -1 || sm_read_check != sm_count)
-		return (0);
+gk_read_check = read(file, text, letters);
 
-	free(text);
-	close(file);
+gk_count = write(STDOUT_FILENO, text, gk_read_check);
 
-	return (sm_count);
+close(file);
+
+/*return number of letters written to the standard output*/
+return (gk_count);
 }
