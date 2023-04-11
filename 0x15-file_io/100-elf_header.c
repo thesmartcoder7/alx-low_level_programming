@@ -29,10 +29,10 @@ void close_elf(int elf);
  * Description: If the file is not an ELF File or
  *              the function fails - exit code 98.
  */
-int main(int __attribute__((__unused__)) argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	Elf64_Ehdr *header;
-	int o, r;
+	register int o, r;
 
 	o = open(argv[1], O_RDONLY);
 	if (o == -1)
