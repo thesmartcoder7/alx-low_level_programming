@@ -32,7 +32,7 @@ void check_elf(unsigned char *e_ident)
 
 	for (i = 0; i < 4; i++)
 	{
-		if (e_ident[i] != 127 &&
+		if (e_ident[i] != '0x7F' &&
 		    e_ident[i] != 'E' &&
 		    e_ident[i] != 'L' &&
 		    e_ident[i] != 'F')
