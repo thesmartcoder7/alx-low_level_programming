@@ -123,22 +123,19 @@ void print_magic(unsigned char *e_ident)
  */
 void print_class(unsigned char *e_ident)
 {
-	printf("  Class:                             ");
+	const char* class_str[] = { "none", "ELF32", "ELF64" };
+    int class_idx = e_ident[EI_CLASS];
 
-	switch (e_ident[EI_CLASS])
+    printf("  Class:                             ");
+
+    if (class_idx >= 0 && class_idx <= 2)
 	{
-	case ELFCLASSNONE:
-		printf("none\n");
-		break;
-	case ELFCLASS32:
-		printf("ELF32\n");
-		break;
-	case ELFCLASS64:
-		printf("ELF64\n");
-		break;
-	default:
-		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
-	}
+        printf("%s\n", class_str[class_idx]);
+    }
+	else
+	{
+        printf("<unknown: %x>\n", class_idx);
+    }
 }
 
 /**
