@@ -25,7 +25,10 @@ void close_elf(int elf);
  * @argc: input parameter...the number of arguments supplied to the program.
  * @argv: input parameter...an array of pointers to the arguments.
  *
- * Return: 0 on success else exit code 98.
+ * Return: 0 on success.
+ *
+ * Description: If the file is not an ELF File or
+ *              the function fails - exit code 98.
  */
 int main(int argc, char *argv[])
 {
