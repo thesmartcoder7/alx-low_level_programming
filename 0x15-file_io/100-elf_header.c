@@ -129,7 +129,8 @@ void print_class(unsigned char *e_ident)
 	{
 		if (i == EI_CLASS)
 		{
-			switch (e_ident[i]) {
+			switch (e_ident[i])
+			{
 				case ELFCLASSNONE:
 					printf("none\n");
 					break;
