@@ -32,7 +32,7 @@ void check_elf(unsigned char *e_ident)
 
 	for (i = 0; i < 4; i++)
 	{
-		if (e_ident[i] != '\177ELF' &&
+		if (e_ident[i] != 127 &&
 		    e_ident[i] != 'E' &&
 		    e_ident[i] != 'L' &&
 		    e_ident[i] != 'F')
@@ -45,9 +45,8 @@ void check_elf(unsigned char *e_ident)
 
 /**
  * print_magic - this function prints the magic numbers of an ELF header.
- * @e_ident: this is a pointer to an array containing the ELF magic numbers.
  *
- * Description: Magic numbers are separated by spaces.
+ * @e_ident: this is a pointer to an array containing the ELF magic numbers.
  */
 void print_magic(unsigned char *e_ident)
 {
