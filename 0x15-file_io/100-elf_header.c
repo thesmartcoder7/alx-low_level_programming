@@ -32,7 +32,7 @@ void close_elf(int elf);
 int main(int argc, char *argv[])
 {
 	Elf64_Ehdr *header;
-	register int o, r;
+	int o, r;
 
 	o = open(argv[1], O_RDONLY);
 	if (o == -1)
