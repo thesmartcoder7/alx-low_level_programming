@@ -239,20 +239,8 @@ void print_osabi(unsigned char *e_ident)
  */
 void print_abi(unsigned char *e_ident)
 {
-    printf("  %-34s ", "ABI Version:");
-
-    switch (e_ident[EI_ABIVERSION])
-	{
-        case 0:
-            puts("0 (invalid)");
-            break;
-        case 1:
-            puts("1 (current)");
-            break;
-        default:
-            printf("%u\n", e_ident[EI_ABIVERSION]);
-            break;
-    }
+	printf("  ABI Version:                       %d\n",
+	       e_ident[EI_ABIVERSION]);
 }
 
 /**
