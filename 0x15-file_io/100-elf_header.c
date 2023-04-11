@@ -166,8 +166,9 @@ void print_data(unsigned char *e_ident)
 }
 
 /**
- * print_version - Prints the version of an ELF header.
- * @e_ident: A pointer to an array containing the ELF version.
+ * print_version - this function the version of an ELF header.
+ * @e_ident: input parameter...a pointer to an array containing
+ *			the ELF version.
  */
 void print_version(unsigned char *e_ident)
 {
@@ -186,8 +187,9 @@ void print_version(unsigned char *e_ident)
 }
 
 /**
- * print_osabi - Prints the OS/ABI of an ELF header.
- * @e_ident: A pointer to an array containing the ELF version.
+ * print_osabi - this function prints the OS/ABI of an ELF header.
+ * @e_ident: iput parameter...a pointer to an array containing
+ *			the ELF version.
  */
 void print_osabi(unsigned char *e_ident)
 {
@@ -231,8 +233,9 @@ void print_osabi(unsigned char *e_ident)
 }
 
 /**
- * print_abi - Prints the ABI version of an ELF header.
- * @e_ident: A pointer to an array containing the ELF ABI version.
+ * print_abi - this function prints the ABI version of an ELF header.
+ * @e_ident: input paramter...a pointer to an array containing
+ *			the ELF ABI version.
  */
 void print_abi(unsigned char *e_ident)
 {
