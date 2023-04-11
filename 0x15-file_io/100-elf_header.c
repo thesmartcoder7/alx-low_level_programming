@@ -123,24 +123,27 @@ void print_magic(unsigned char *e_ident)
  */
 void print_class(unsigned char *e_ident)
 {
-	const char* class_str[] = { "none", "ELF32", "ELF64" };
-    int class_idx = e_ident[EI_CLASS];
+	printf("  Class:                             ");
 
-    printf("  Class:                             ");
-
-    if (class_idx >= 0 && class_idx <= 2)
+	switch (e_ident[EI_CLASS])
 	{
-        printf("%s\n", class_str[class_idx]);
-    }
-	else
-	{
-        printf("<unknown: %x>\n", class_idx);
-    }
+	case ELFCLASSNONE:
+		printf("none\n");
+		break;
+	case ELFCLASS32:
+		printf("ELF32\n");
+		break;
+	case ELFCLASS64:
+		printf("ELF64\n");
+		break;
+	default:
+		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
+	}
 }
 
 /**
- * print_data - Prints the data of an ELF header.
- * @e_ident: A pointer to an array containing the ELF class.
+ * print_data - this function prints the data of an ELF header.
+ * @e_ident: input parameter...a pointer to an array containing the ELF class.
  */
 void print_data(unsigned char *e_ident)
 {
@@ -163,12 +166,12 @@ void print_data(unsigned char *e_ident)
 }
 
 /**
- * print_version - Prints the version of an ELF header.
- * @e_ident: A pointer to an array containing the ELF version.
+ * print_version - this function prints the version of an ELF header.
+ * @e_ident: input parameter...a pointer to an array containing the ELF version.
  */
 void print_version(unsigned char *e_ident)
 {
-	printf("  Version:                           %d",
+	printf("  Version:                           ",
 	       e_ident[EI_VERSION]);
 
 	switch (e_ident[EI_VERSION])
