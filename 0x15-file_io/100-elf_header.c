@@ -244,9 +244,10 @@ void print_abi(unsigned char *e_ident)
 }
 
 /**
- * print_type - Prints the type of an ELF header.
- * @e_type: The ELF type.
- * @e_ident: A pointer to an array containing the ELF class.
+ * print_type - this function the type of an ELF header.
+ * @e_type: input parameter...The ELF type.
+ * @e_ident: input parameter...a pointer to an array containing
+ *			the ELF class.
  */
 void print_type(unsigned int e_type, unsigned char *e_ident)
 {
@@ -278,9 +279,10 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 }
 
 /**
- * print_entry - Prints the entry point of an ELF header.
- * @e_entry: The address of the ELF entry point.
- * @e_ident: A pointer to an array containing the ELF class.
+ * print_entry - this function prints the entry point of an ELF header.
+ * @e_entry: input parameter...the address of the ELF entry point.
+ * @e_ident: input parameter...a pointer to an array containing
+ *			the ELF class.
  */
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
@@ -301,17 +303,17 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 }
 
 /**
- * close_elf - Closes an ELF file.
- * @elf: The file descriptor of the ELF file.
+ * close_elf - this function closes an ELF file.
+ * @sm_elf: input parameter...the file descriptor of the ELF file.
  *
- * Description: If the file cannot be closed - exit code 98.
+ * Return: If the file cannot be closed - exit code 98.
  */
-void close_elf(int elf)
+void close_elf(int sm_elf)
 {
-	if (close(elf) == -1)
+	if (close(sm_elf) == -1)
 	{
 		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %d\n", elf);
+			"Error: Can't close fd %d\n", sm_elf);
 		exit(98);
 	}
 }
