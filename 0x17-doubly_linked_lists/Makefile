@@ -1,0 +1,2 @@
+run:
+	betty *.c
