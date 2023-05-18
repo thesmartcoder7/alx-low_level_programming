@@ -2,8 +2,8 @@
 
 /**
  * add_dnodeint_end - this adds a new node at the end
- *of a dlistint_t list.
-
+ * of a dlistint_t list.
+ *
  * @head: Pointer to the head of the dlistint_t list.
  * @n: The integer the new node will contain.
  *
