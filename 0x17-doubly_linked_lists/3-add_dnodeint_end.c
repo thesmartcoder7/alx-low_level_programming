@@ -11,27 +11,27 @@
  */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *sm_curr = NULL, *sm_new = NULL;
+	dlistint_t *sm_new, *last;
 
 	sm_new = malloc(sizeof(dlistint_t));
 	if (sm_new == NULL)
 		return (NULL);
 
 	sm_new->n = n;
-	if (*head)
-	{
-		sm_curr = *head;
-		while (sm_curr->next != NULL)
-			sm_curr = sm_curr->next;
+	sm_new->next = NULL;
 
-		sm_new->next = NULL;
-		sm_new->prev = sm_curr;
-		sm_curr->next = sm_new;
+	if (*head == NULL)
+	{
+		sm_new->prev = NULL;
+		*head = sm_new;
 		return (sm_new);
 	}
 
-	sm_new->next = *head;
-	sm_new->prev = NULL;
-	*head = sm_new;
-	return (*head);
+	last = *head;
+	while (last->next != NULL)
+		last = last->next;
+	last->next = sm_new;
+	sm_new->prev = last;
+
+	return (sm_new);
 }
